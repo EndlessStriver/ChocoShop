@@ -6,7 +6,7 @@ import jakarta.persistence.Persistence;
 
 public class TestConnect {
 	public static void main(String[] args) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA_ORM_CHOCOSHOP");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("CHOCOSHOP");
 		EntityManager em = emf.createEntityManager();
 		
 		System.out.println("Connected");

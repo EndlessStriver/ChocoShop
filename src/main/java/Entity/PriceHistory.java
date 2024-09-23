@@ -1,6 +1,7 @@
 package Entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -47,5 +48,5 @@ public class PriceHistory {
 	private Product product;
 	
 	@OneToMany(mappedBy = "priceHistory")
-	private OrderDetail orderDetail;
+	private List<OrderDetail> orderDetail;
 }

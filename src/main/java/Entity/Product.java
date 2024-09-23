@@ -32,13 +32,13 @@ public class Product {
 	@Column(name = "product_name", nullable = false)
 	private String productName;
 	
-	@Column(name = "price", nullable = false)
+	@Column(name = "description", nullable = false)
 	private String description;
 	
-	@Column(name = "price", nullable = false)
+	@Column(name = "dimension", nullable = false)
 	private String dimension;
 	
-	@Column(name = "price", nullable = false)
+	@Column(name = "weight", nullable = false)
 	private double weight;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
