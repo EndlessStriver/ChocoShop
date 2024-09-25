@@ -1,54 +1,55 @@
 package Service.Implement;
 
-import java.util.Set;
-
 import org.mindrot.jbcrypt.BCrypt;
 
 import Dao.UserDao;
-import Dao.Implement.UserDAOImpl;
 import Entity.User;
 import Service.AuthService;
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.Validation;
-import jakarta.validation.Validator;
-import jakarta.validation.ValidatorFactory;
+import Util.ValidatorUtil;
 
 public class AuthServiceImp implements AuthService {
-	
-	private UserDao userDao = new UserDAOImpl();
-	
-	public String register(User user) {
-		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-        Validator validator = factory.getValidator();
-		Set<ConstraintViolation<User>> violations  = validator.validate(user);
-		
-		if (!violations.isEmpty()) {
-            return violations.iterator().next().getMessage();
-        }
-		
-		String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
-		user.setPassword(hashedPassword);
+
+	private UserDao userDao;
+
+	public AuthServiceImp(UserDao userDao) {
+		this.userDao = userDao;
+	}
+
+	public void register(User user) {
 
 		try {
-	        userDao.save(user);
-	        return null;
-	    } catch (Exception e) {
-	        return "An error occurred while registering. Please try again.";
-	    }
-	
+			String messageError = ValidatorUtil.validatorUser(user);
+
+			if (messageError != null)
+				throw new RuntimeException(messageError);
+
+			String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+
+			user.setPassword(hashedPassword);
+			userDao.createUser(user);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+
 	}
-	
+
 	public boolean login(String username, String password) {
-		
-		User user = userDao.findByUsername(username);
-		
-		if (user == null) return false;
-		
-		boolean isPasswordMatch = BCrypt.checkpw(password, user.getPassword());
-		boolean isUsernameMatch = username.equals(user.getUserName());
-		
-		if (isPasswordMatch && isUsernameMatch)  return true;
-		
-		return false;
+
+		try {
+			User user = userDao.findUserByUsername(username);
+
+			if (user == null)
+				throw new RuntimeException("User not found");
+
+			boolean isPasswordMatch = BCrypt.checkpw(password, user.getPassword());
+			boolean isUsernameMatch = username.equals(user.getUserName());
+
+			if (isPasswordMatch && isUsernameMatch)
+				return true;
+
+			return false;
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
 	}
 }

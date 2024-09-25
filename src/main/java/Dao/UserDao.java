@@ -5,10 +5,10 @@ import java.util.List;
 import Entity.User;
 
 public interface UserDao {
-	User findById(Long id);
-    List<User> findAll();
-    void save(User user);
-    void update(User user);
-    void delete(Long id);
-    User findByUsername(String username);
+	User getUser(Long id);
+    List<User> getUsers();
+    void createUser(User user);
+    void updateUser(User user);
+    void deleteUser(Long id);
+    User findUserByUsername(String username);
 }

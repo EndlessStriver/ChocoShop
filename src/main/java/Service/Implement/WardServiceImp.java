@@ -1,0 +1,65 @@
+package Service.Implement;
+
+import java.util.List;
+
+import Entity.Ward;
+import Service.WardService;
+
+public class WardServiceImp implements WardService {
+
+	private WardService wardService;
+
+	public WardServiceImp(WardService wardService) {
+		this.wardService = wardService;
+	}
+
+	@Override
+	public List<Ward> getAllWards() {
+		List<Ward> wards = null;
+		try {
+			wards = wardService.getAllWards();
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+		return wards;
+	}
+
+	@Override
+	public Ward getWard(int id) {
+		Ward ward = null;
+		try {
+			ward = wardService.getWard(id);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+		return ward;
+	}
+
+	@Override
+	public void createWard(Ward ward) {
+		try {
+			wardService.createWard(ward);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+	}
+
+	@Override
+	public void updateWard(Ward ward) {
+		try {
+			wardService.updateWard(ward);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+	}
+
+	@Override
+	public void deleteWard(int id) {
+		try {
+			wardService.deleteWard(id);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+	}
+
+}

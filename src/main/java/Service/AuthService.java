@@ -4,7 +4,7 @@ import Entity.User;
 
 public interface AuthService {
 
-	public String register(User user);
+	void register(User user);
 
-	public boolean login(String username, String password);
+	boolean login(String username, String password);
 }

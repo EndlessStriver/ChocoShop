@@ -7,28 +7,33 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import Dao.UserDao;
+import Dao.Implement.UserDaoImp;
 import Entity.User;
 import Entity.Enum.Role;
 import Service.AuthService;
 import Service.Implement.AuthServiceImp;
 import Util.MethodUtil;
 
-@WebServlet(urlPatterns = {"/register"})
+@WebServlet(urlPatterns = { "/register" })
 public class RegisterController extends HttpServlet {
-	
+
 	private static final long serialVersionUID = 1L;
-       
-    public RegisterController() {
-        super();
-    }
+	private UserDao userDAO = new UserDaoImp();
+	private AuthService authService;
+
+	public RegisterController() {
+		super();
+		authService = new AuthServiceImp(userDAO);
+	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		AuthService authService = new AuthServiceImp();
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		String username = request.getParameter("username");
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
@@ -37,7 +42,7 @@ public class RegisterController extends HttpServlet {
 		String gender = request.getParameter("gender");
 		String password = request.getParameter("password");
 		String birthday = request.getParameter("birthday");
-		
+
 		User user = new User();
 		user.setUserName(username);
 		user.setFirstName(firstName);
@@ -48,19 +53,18 @@ public class RegisterController extends HttpServlet {
 		user.setPassword(password);
 		user.setBirthday(MethodUtil.ConvertStringToLocalDate(birthday));
 		user.setRole(Role.USER);
-		
-		String errorMessage =  authService.register(user);
-		
-		if (errorMessage != null) {
-			System.out.println(errorMessage);
-			System.out.println("Register failed");
-//			request.setAttribute("errorMessage", errorMessage);
-//			request.getRequestDispatcher("register.jsp").forward(request, response);
-		} else {
+
+		try {
+			authService.register(user);
 			System.out.println("Register success");
 //			request.getRequestDispatcher("login.jsp").forward(request, response);
+		} catch (Exception e) {
+			System.out.println("Register failed");
+			System.out.println(e.getMessage());
+//			request.setAttribute("errorMessage", errorMessage);
+//			request.getRequestDispatcher("register.jsp").forward(request, response);
 		}
-		
+
 	}
 
 }
