@@ -23,7 +23,7 @@ public class ProvinceServiceImp implements ProvinceService {
 				throw new RuntimeException(messageError);
 			provinceDao.createProvince(province);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
@@ -35,7 +35,7 @@ public class ProvinceServiceImp implements ProvinceService {
 				throw new RuntimeException(messageError);
 			provinceDao.updateProvince(province);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
@@ -44,7 +44,7 @@ public class ProvinceServiceImp implements ProvinceService {
 		try {
 			provinceDao.deleteProvince(id);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
@@ -54,7 +54,7 @@ public class ProvinceServiceImp implements ProvinceService {
 		try {
 			province = provinceDao.getProvince(id);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 		return province;
 	}

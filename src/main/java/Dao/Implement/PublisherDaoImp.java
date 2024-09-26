@@ -67,6 +67,9 @@ public class PublisherDaoImp implements PublisherDao {
 			em.remove(publisher);
 			em.getTransaction().commit();
 		} catch (Exception e) {
+			if (em.getTransaction().isActive()) {
+				em.getTransaction().rollback();
+			}
 			throw new RuntimeException("Error in deleting publisher");
 		} finally {
 			if (em.isOpen()) {
@@ -83,6 +86,9 @@ public class PublisherDaoImp implements PublisherDao {
 			em.merge(publisher);
 			em.getTransaction().commit();
 		} catch (Exception e) {
+			if (em.getTransaction().isActive()) {
+				em.getTransaction().rollback();
+			}
 			throw new RuntimeException("Error in updating publisher");
 		} finally {
 			if (em.isOpen()) {

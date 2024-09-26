@@ -19,7 +19,7 @@ public class PublisherServiceImp implements PublisherService{
 		try {
 			return publisherService.getAllPublishers();
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
@@ -28,7 +28,7 @@ public class PublisherServiceImp implements PublisherService{
 		try {
 			publisherService.createPublisher(publisher);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 		
@@ -38,7 +38,7 @@ public class PublisherServiceImp implements PublisherService{
 		try {
 			publisherService.deletePublisher(id);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
@@ -47,7 +47,7 @@ public class PublisherServiceImp implements PublisherService{
 		try {
 			publisherService.updatePublisher(publisher);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
@@ -57,7 +57,7 @@ public class PublisherServiceImp implements PublisherService{
 		try {
 			return publisherService.getPublisher(id);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 	

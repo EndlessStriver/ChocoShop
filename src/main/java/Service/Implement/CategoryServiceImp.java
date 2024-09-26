@@ -19,7 +19,7 @@ public class CategoryServiceImp implements CategoryService{
 		try {
 			return categoryDao.getCategories();
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
@@ -28,7 +28,7 @@ public class CategoryServiceImp implements CategoryService{
 		try {
 			return categoryDao.getCategory(id);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
@@ -37,7 +37,7 @@ public class CategoryServiceImp implements CategoryService{
 		try {
 			categoryDao.createCategory(category);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
@@ -46,7 +46,7 @@ public class CategoryServiceImp implements CategoryService{
 		try {
 			categoryDao.deleteCategory(id);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
@@ -55,7 +55,7 @@ public class CategoryServiceImp implements CategoryService{
 		try {
 			categoryDao.updateCategory(category);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 

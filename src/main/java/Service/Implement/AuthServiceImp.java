@@ -28,7 +28,7 @@ public class AuthServiceImp implements AuthService {
 			user.setPassword(hashedPassword);
 			userDao.createUser(user);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 
 	}
@@ -49,7 +49,7 @@ public class AuthServiceImp implements AuthService {
 
 			return false;
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 }

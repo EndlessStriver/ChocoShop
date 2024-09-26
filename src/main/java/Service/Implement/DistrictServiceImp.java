@@ -21,7 +21,7 @@ public class DistrictServiceImp implements DistrictService {
 		try {
 			districts = districtDao.getDistricts();
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 		return districts;
 	}
@@ -32,7 +32,7 @@ public class DistrictServiceImp implements DistrictService {
 		try {
 			district = districtDao.getDistrict(id);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 		return district;
 	}
@@ -47,7 +47,7 @@ public class DistrictServiceImp implements DistrictService {
 		try {
 			districtDao.createDistrict(district);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
@@ -61,7 +61,7 @@ public class DistrictServiceImp implements DistrictService {
 		try {
 			districtDao.updateDistrict(district);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
@@ -70,7 +70,7 @@ public class DistrictServiceImp implements DistrictService {
 		try {
 			districtDao.deleteDistrict(id);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 

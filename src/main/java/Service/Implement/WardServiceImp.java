@@ -19,7 +19,7 @@ public class WardServiceImp implements WardService {
 		try {
 			wards = wardService.getAllWards();
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 		return wards;
 	}
@@ -30,7 +30,7 @@ public class WardServiceImp implements WardService {
 		try {
 			ward = wardService.getWard(id);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 		return ward;
 	}
@@ -40,7 +40,7 @@ public class WardServiceImp implements WardService {
 		try {
 			wardService.createWard(ward);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
@@ -49,7 +49,7 @@ public class WardServiceImp implements WardService {
 		try {
 			wardService.updateWard(ward);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
@@ -58,7 +58,7 @@ public class WardServiceImp implements WardService {
 		try {
 			wardService.deleteWard(id);
 		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
+			throw e;
 		}
 	}
 
