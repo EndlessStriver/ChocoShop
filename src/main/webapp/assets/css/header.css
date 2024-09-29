@@ -1,0 +1,50 @@
+body {
+	font-family: monospace;
+	
+}
+
+.navbar {
+	background-color: black;
+	color: white;
+}
+
+.navbar-brand {
+	color: gold;
+	font-size: 3em;
+	font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: white; 
+}
+
+.navbar-nav .nav-link,
+.navbar-brand:hover {
+    color: gold; 
+}
+
+.navbar-nav .nav-link:hover {
+    color: gold; 
+}
+
+.top-bar {
+	background-image: linear-gradient(to right, #FDEFAA, #C99752);
+	height: 30px;
+}
+
+.search-bar {
+	margin-bottom: 10px; 
+	
+}
+
+.search-bar input {
+	width: 250px;
+}
+.search-bar a{
+	margin-left:10px;
+}
+
+.navbar-nav {
+	flex-grow: 1; 
+	justify-content: center; 
+}

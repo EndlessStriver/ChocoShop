@@ -1,0 +1,64 @@
+# Bỏ qua thư mục chứa file biên dịch và build
+/target/
+/build/
+
+# Bỏ qua các file biên dịch Java
+*.class
+*.jar
+*.war
+
+# Bỏ qua thư mục WEB-INF/classes chứa file biên dịch
+/WEB-INF/classes/
+
+# Bỏ qua thư mục chứa file tạm thời do server tạo ra (Tomcat, Jetty, v.v.)
+/tmp/
+/work/
+
+# Bỏ qua file log
+*.log
+/logs/
+
+# Bỏ qua file lock của Maven
+*.lock
+
+# Bỏ qua các file cấu hình môi trường không cần thiết
+*.env
+.env.*
+
+# Bỏ qua các file cấu hình IDE (IntelliJ, VSCode, Eclipse, NetBeans)
+/.idea/
+/.vscode/
+/.project
+/.classpath
+/.settings/
+/*.iml
+
+# Bỏ qua các thư viện dependency của IDE (Eclipse hoặc NetBeans)
+lib/
+
+# Bỏ qua các file build của Maven hoặc Gradle
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Bỏ qua các file hệ thống không cần thiết
+.DS_Store
+Thumbs.db
+
+# Bỏ qua các file riêng tư (mật khẩu, key)
+/secret.key
+*.pem
+*.key
+*.p12
+
+# Bỏ qua các file đã tải về bằng Maven hoặc Gradle
+.mvn/
+/.m2/
+/.gradle/
+
+# Bỏ qua file swap hoặc temp của các trình soạn thảo văn bản
+*~
+*.swp
+*.tmp
