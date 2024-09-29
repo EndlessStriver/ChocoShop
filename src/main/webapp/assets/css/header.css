@@ -18,15 +18,13 @@ body {
     color: white; 
 }
 
-.navbar-nav .nav-link,
-.navbar-brand:hover {
-    color: gold; 
-}
-
 .navbar-nav .nav-link:hover {
     color: gold; 
 }
 
+.navbar-brand:hover{
+	color:gold;
+}
 .top-bar {
 	background-image: linear-gradient(to right, #FDEFAA, #C99752);
 	height: 30px;
