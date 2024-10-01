@@ -15,8 +15,7 @@
 
 	<!-- Header -->
 	<nav class="navbar navbar-expand-lg navbar-light">
-		<div
-			class="container d-flex justify-content-between align-items-center">
+		<div class="container d-flex justify-space-between align-items-center">
 			<a class="navbar-brand" href="#">CHOCOHEAVEN</a>
 			<div class="search-bar d-flex">
 				<input class="form-control" type="search" placeholder="Search"
