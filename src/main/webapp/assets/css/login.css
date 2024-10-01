@@ -1,60 +1,54 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap')
+	;
+
 body {
-  background: #eee !important;
+	font-family: 'Poppins', sans-serif;
+	background: #ececec;
 }
 
-.wrapper {
-  margin-top: 80px;
-  margin-bottom: 80px;
-  display: flex; /* Sử dụng flexbox */
-  justify-content: center; /* Căn giữa theo chiều ngang */
+/*------------ Login container ------------*/
+.box-area {
+	width: 930px;
 }
 
-.form-signin {
-  min-width: 200px;
-  padding: 80px;
-  margin: 0 auto;
-  background-color: #fff;
-  text-align: center;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  position: relative; /* Để sử dụng cho positioning của forgot-password */
+/*------------ Right box ------------*/
+.right-box {
+	padding: 40px 30px 40px 40px;
 }
 
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
-  margin-bottom: 30px;
+/*------------ Custom Placeholder ------------*/
+::placeholder {
+	font-size: 16px;
 }
 
-.form-signin .form-control {
-  position: relative;
-  font-size: 16px;
-  height: auto;
-  padding: 10px;
-  box-sizing: border-box; /* Chỉ cần box-sizing này */
+.rounded-4 {
+	border-radius: 20px;
 }
 
-.form-signin .form-control:focus {
-  z-index: 2;
+.rounded-5 {
+	border-radius: 30px;
 }
 
-.form-signin input[type="text"] {
-  margin-bottom: -1px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  min-width: 100px;
-}
-
-.form-signin input[type="password"] {
-  margin-bottom: 20px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-/* Định dạng cho forgot password */
-.forgot-password {
-  display: block; /* Đặt thành block để nó nằm dưới */
-  text-align: right; /* Căn phải */
-  margin-top: 10px; /* Tạo khoảng cách giữa nút login và link forgot */
-  position: absolute; /* Đặt vị trí tuyệt đối */
-  bottom: 20px; /* Cách đáy form 20px */
-  right: 20px; /* Cách bên phải 20px */
+/*------------ For small screens------------*/
+@media only screen and (max-width: 768px) {
+	.box-area {
+		margin: 0 10px;
+	}
+	.left-box {
+		height: 100px;
+		overflow: hidden;
+	}
+	.right-box {
+		padding: 20px;
+	}
+	@media only screen and (min-width: 769px) {
+		.right-box {
+			padding: 50px;
+		}
+		.box-area {
+			width: 930px; 
+			padding: 20px; 
+		}
+	}
 }
