@@ -16,11 +16,11 @@
             <h2 class="text-center mb-4">ĐĂNG KÝ TÀI KHOẢN</h2>
             <div class="mb-2 row g-1">
                 <div class="col">
-                    <input type="text" class="form-control" id="first-name" name="first-name" placeholder="FirstName" required>
+                    <input type="text" class="form-control" id="first-name" name="firstName" placeholder="FirstName" required>
                     <div id="firstNameError" class="error-message"></div>
                 </div>
                 <div class="col">
-                    <input type="text" name="last-name" id="last-name" class="form-control" placeholder="LastName"required>
+                    <input type="text" name="lastName" id="last-name" class="form-control" placeholder="LastName"required>
                     <div id="lastNameError" class="error-message"></div>
                 </div>
             </div>
@@ -50,11 +50,11 @@
             </div>
             <div class="mb-2">
                 <label for="dob" class="form-label required">Ngày sinh</label>
-                <input type="date" class="form-control" id="dob" name="dob" required>
+                <input type="date" class="form-control" id="dob" name="birthday" required>
                 <div id="dobError" class="error-message"></div>
             </div>
             <div class="mb-2">
-                <input type="tel" class="form-control" id="tel" name="tel" placeholder="Số Điện Thoại" required>
+                <input type="tel" class="form-control" id="tel" name="phoneNumber" placeholder="Số Điện Thoại" required>
                 <div id="telError" class="error-message"></div>
             </div>
             <div class="mb-2">
