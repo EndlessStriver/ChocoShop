@@ -32,7 +32,7 @@ public class Product {
 	@Column(name = "product_name", nullable = false)
 	private String productName;
 	
-	@Column(name = "description", nullable = false)
+	@Column(name = "description", nullable = true)
 	private String description;
 	
 	@Column(name = "dimension", nullable = false)
@@ -40,6 +40,9 @@ public class Product {
 	
 	@Column(name = "weight", nullable = false)
 	private double weight;
+	
+	@Column(name = "main_image", nullable = true)
+	private String mainImage;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_id")

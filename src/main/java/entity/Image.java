@@ -31,9 +31,6 @@ public class Image {
 	@Column(name = "image_name", nullable = false)
 	private String imageName;
 	
-	@Column(name = "is_main_image", nullable = false)
-	private boolean isMainImage;
-	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "product_id")
 	private Product product;
