@@ -24,6 +24,11 @@ public class LoginController extends HttpServlet {
 		super();
 		authService = new AuthServiceImp(userDao);
 	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.sendRedirect("public/login.jsp");
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
