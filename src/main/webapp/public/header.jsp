@@ -16,7 +16,7 @@
 	<!-- Header -->
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="container d-flex justify-space-between align-items-center">
-			<a class="navbar-brand" href="#">CHOCOHEAVEN</a>
+			<a class="navbar-brand" href="#"><img alt="" src="../assets/images/logo.png"></a>
 			<div class="search-bar d-flex">
 				<input class="form-control" type="search" placeholder="Search"
 					aria-label="Search">

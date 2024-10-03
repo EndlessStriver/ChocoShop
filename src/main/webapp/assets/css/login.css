@@ -1,20 +1,35 @@
-@import
-	url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap')
-	;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 body {
 	font-family: 'Poppins', sans-serif;
 	background: #ececec;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
 }
 
 /*------------ Login container ------------*/
 .box-area {
 	width: 930px;
+	background: white;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-wrap: wrap;
 }
 
-/*------------ Right box ------------*/
+.left-box {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 30px;
+}
+
 .right-box {
-	padding: 40px 30px 40px 40px;
+	flex: 1;
+	padding: 50px;
 }
 
 /*------------ Custom Placeholder ------------*/
@@ -30,10 +45,11 @@ body {
 	border-radius: 30px;
 }
 
-/*------------ For small screens------------*/
+/*------------ For small screens ------------*/
 @media only screen and (max-width: 768px) {
 	.box-area {
 		margin: 0 10px;
+		width: auto;
 	}
 	.left-box {
 		height: 100px;
@@ -42,13 +58,15 @@ body {
 	.right-box {
 		padding: 20px;
 	}
-	@media only screen and (min-width: 769px) {
-		.right-box {
-			padding: 50px;
-		}
-		.box-area {
-			width: 930px; 
-			padding: 20px; 
-		}
+}
+
+/*------------ For large screens ------------*/
+@media only screen and (min-width: 769px) {
+	.right-box {
+		padding: 50px;
+	}
+	.box-area {
+		width: 930px;
+		padding: 20px;
 	}
 }
